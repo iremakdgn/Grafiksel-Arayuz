@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+
+  <style>
+  body {
+      font: 20px Montserrat, sans-serif;
+      line-height: 1.8;
+      color: #f5f6f7;
+  }
+  p {font-size: 16px;}
+  .margin {margin-bottom: 45px;}
+  .bg-1 {
+      background-color: #1abc9c; /* Green */
+      color: #ffffff;
+  }
+  .bg-2 {
+      background-color: White; /* Dark Blue */
+      color: White;
+  }
+  .bg-3 {
+      background-color: White; /* White */
+      color: #555555;
+  }
+  .bg-4 {
+      background-color: White; /* Black Gray */
+      color: #fff;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  .navbar {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      border: 0;
+      border-radius: 0;
+      margin-bottom: 0;
+      font-size: 12px;
+      letter-spacing: 5px;
+  }
+  .navbar-nav  li a:hover {
+      color: #1abc9c !important;
+  }
+  </style>
+</head>
+<body>
+
+
+<!-- First Container -->
+<div class="container-fluid bg-1 text-center">
+  <img src="tai2.png" class="img-responsive img-circle margin" style="display:inline" alt="Tai" width="400" height="350">
+</div>
+<!-- Third Container (Grid) -->
+<div class="container-fluid bg-3 text-center">
+
+  <div class="row">
+
+    <div class="col-sm-4">
+
+</div>
+
+    <div class="col-sm-4">
+
+          <!-- Form code begins -->
+          <form method="post">
+            <div class="form-group"> <!-- Date input -->
+              <label class="control-label" for="date">Date</label>
+              <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+            </div>
+            <div class="form-group"> <!-- Submit button -->
+              <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+            </div>
+           </form>
+           <!-- Form code ends -->
+           <!-- Include jQuery -->
+           <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+           <!-- Include Date Range Picker -->
+           <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+           <script>
+               $(document).ready(function(){
+                   var date_input=$('input[name="date"]'); //our date input has the name "date"
+                   var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+                   date_input.datepicker({
+                       format: 'mm/dd/yyyy',
+                       container: container,
+                       todayHighlight: true,
+                       autoclose: true,
+                   })
+               })
+           </script>
+           <br><br>
+
+           <div class="dropdown">
+       <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Yazilim
+       <span class="caret"></span></button>
+       <ul class="dropdown-menu">
+         <li><a href="#">CNEXT</a></li>
+         <li><a href="#">MATLAB</a></li>
+         <li><a href="#">PATRAN</a></li>
+         <li><a href="#">MSPAINT</a></li>
+       </ul>
+     </div>
+
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<!-- Second Container -->
+<div class="container-fluid bg-2 text-center">
+  <canvas id="myChart" width="10" height="2"></canvas>
+      <script>
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+var chart = new Chart(ctx, {
+    // The type of chart we want to create
+    type: 'bar',
+
+    // The data for our dataset
+    data: {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [{
+            label: "My First dataset",
+            backgroundColor: 'rgb(255, 99, 132)',
+            borderColor: 'rgb(255, 99, 132)',
+            data: [0, 10, 5, 2, 20, 30, 45],
+        }]
+    },
+
+    // Configuration options go here
+    options: {}
+});
+</script>
+<br>
+<div class="row">
+
+  <div class="col-sm-4">
+    <div class="form-group"> <!-- Submit button -->
+      <button class="btn btn-primary btn-lg " name="hafta" type="submit">Hafta  </button>
+    </div>
+</div>
+
+<div class="col-sm-4">
+  <div class="form-group"> <!-- Submit button -->
+    <button class="btn btn-primary btn-lg" name="ay" type="submit" >Ay  </button>
+  </div>
+</div>
+
+<div class="col-sm-4">
+  <div class="form-group"> <!-- Submit button -->
+    <button class="btn btn-primary btn-lg" name="yıl" type="submit">Yil  </button>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+</body>
+</html>

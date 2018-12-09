@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com - No Copyright -->
+  <title>Bootstrap Theme Simply Me</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Isolated Version of Bootstrap, not needed if your site already uses Bootstrap -->
+<link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css" />
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+  <style>
+  .bg-1 {
+      background-color: #1abc9c;
+      color: #ffffff;
+  }
+  .bg-2 {
+      background-color: #474e5d;
+      color: #ffffff;
+  }
+  .bg-3 {
+      background-color: #ffffff;
+      color: #555555;
+  }
+  .container-fluid {
+      padding-top: 70px;
+      padding-bottom: 70px;
+  }
+  </style>
+</head>
+<body>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+<div class="container-fluid bg-3">
+
+  <div class="row">
+    <div class="col-sm-6">
+      <canvas id="myChart" width="40" height="15"></canvas>
+          <script>
+
+      var ctx = document.getElementById('myChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
+
+        // The data for our dataset
+        data: {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                label: "My First dataset",
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+    });
+    </script>
+    <br>
+    <br>
+    <br>
+    <!-- Form code begins -->
+    <form method="post">
+      <div class="form-group"> <!-- Date input -->
+        <label class="control-label" for="date">Date</label>
+        <input class="form-control" id="date" name="date" placeholder="MM/DD/YYY" type="text"/>
+      </div>
+      <div class="form-group"> <!-- Submit button -->
+        <button class="btn-warning btn btn-primary " name="submit" type="submit">Submit</button>
+      </div>
+     </form>
+     <!-- Form code ends -->
+     <!-- Include jQuery -->
+     <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+     <!-- Include Date Range Picker -->
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+
+     <script>
+         $(document).ready(function(){
+             var date_input=$('input[name="date"]'); //our date input has the name "date"
+             var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+             date_input.datepicker({
+                 format: 'mm/dd/yyyy',
+                 container: container,
+                 todayHighlight: true,
+                 autoclose: true,
+             })
+         })
+     </script>
+     <br>
+     <br>
+
+     <div class="row">
+
+       <div class="col-sm-4">
+         <div class="form-group"> <!-- Submit button -->
+           <button class="btn-success btn-group btn-group-justified   " name="haftalık" type="submit">Haftalık Özet  </button>
+         </div>
+     </div>
+
+     <div class="col-sm-4">
+       <div class="form-group"> <!-- Submit button -->
+         <button class="btn-success btn-group btn-group-justified " name="aylık özet" type="submit" >Aylık Özet  </button>
+       </div>
+     </div>
+
+     <div class="col-sm-4">
+       <div class="form-group"> <!-- Submit button -->
+         <button class="btn-success btn-group btn-group-justified " name="yıllık özet" type="submit">Yıllık Özet  </button>
+       </div>
+     </div>
+
+     </div>
+
+
+
+
+    </div>
+    <div class="col-sm-6">
+      <canvas id="myChart2" width="40" height="15"></canvas>
+          <script>
+
+      var ctx = document.getElementById('myChart2').getContext('2d');
+      var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'pie',
+
+        // The data for our dataset
+        data: {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [{
+                label: "My First dataset",
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [0, 10, 5, 2, 20, 30, 45],
+            }]
+        },
+
+        // Configuration options go here
+        options: {}
+      });
+      </script>
+      <br>
+      <br>
+      <br>
+      <br>
+      <div class="dropdown text-center">
+  <button class="btn-danger btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Yazılımlar
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ul>
+</div>
+
+
+    </div
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
